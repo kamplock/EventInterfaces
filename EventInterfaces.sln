@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventInterfaces", "EventInterfaces\EventInterfaces.csproj", "{197AC987-9D1F-46C3-9C36-0C73C1BB0EB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventInterfacesTest", "EventInterfacesTest\EventInterfacesTest.csproj", "{C6C4ABDF-E330-45AA-A473-A5901A37644A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{197AC987-9D1F-46C3-9C36-0C73C1BB0EB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{197AC987-9D1F-46C3-9C36-0C73C1BB0EB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{197AC987-9D1F-46C3-9C36-0C73C1BB0EB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{197AC987-9D1F-46C3-9C36-0C73C1BB0EB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6C4ABDF-E330-45AA-A473-A5901A37644A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6C4ABDF-E330-45AA-A473-A5901A37644A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6C4ABDF-E330-45AA-A473-A5901A37644A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6C4ABDF-E330-45AA-A473-A5901A37644A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C4FC442-8F2F-492D-AF47-4F81B0C4EB73}
+	EndGlobalSection
+EndGlobal
