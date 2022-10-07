@@ -8,8 +8,7 @@ namespace EventInterfaces
     {
         void printEventData();
 
-        //trying out this method for fun
-        void enterGYear();
+  
         double eventCode(char c);
     }
 
@@ -18,8 +17,6 @@ namespace EventInterfaces
     {
         void printEventData();
 
-        //just trying out this method
-        void enterWDate();
         double eventCode(char c);
     }
 
@@ -29,8 +26,6 @@ namespace EventInterfaces
         void printEventData();
         double eventCode(char c);
 
-        //again, for fun
-        void bdayMsg();
 
     }
 
@@ -90,13 +85,19 @@ namespace EventInterfaces
             if (Char.ToLower(code).Equals('d'))
             {
                 theEvent.EventCost = theEvent.EventCost * .9;
-                return theEvent.EventCost;
             }
             else if (Char.ToLower(code).Equals('l'))
             {
                 double lateFee = theEvent.EventCost * .10;
                 theEvent.EventCost = theEvent.EventCost + lateFee;
-                return theEvent.EventCost;
+            }
+            else if (Char.ToLower(code).Equals('f'))
+            {
+                return 0;
+            }
+            else if (Char.ToLower(code).Equals('e'))
+            {
+                theEvent.EventCost = theEvent.EventCost * .75; //25% discount
             }
             return theEvent.EventCost;
 
@@ -141,31 +142,8 @@ namespace EventInterfaces
                 "\nBirthday Parties can be held in the Dining Room or on the Patio.");
         }
 
-        //printing a congrats msg for wedding - date
-        //no error checking, just for fun
-        void IWedding.enterWDate()
-        {
-            Console.WriteLine("What's your wedding date? MM/DD/YYYY");
-            string theDate = Console.ReadLine();
-            Console.WriteLine("Congrats! We can't wait to celebrate with you. See you " + theDate + "!");
 
-        }
-
-        //printing a congrats msg for graduation - year
-        void IGraduation.enterGYear()
-        {
-            Console.WriteLine("What year is the graduation?");
-            string theYear = Console.ReadLine();
-            Console.WriteLine("Congrats, class of " + theYear + "!");
-        }
-
-        //printing a bday msg for bday - name
-        void IBirthday.bdayMsg()
-        {
-            Console.WriteLine("What is the name of the person celebrating their birthday with us?");
-            string name = Console.ReadLine();
-            Console.WriteLine("Happy birthday, " + name + "!");
-        }
+        
 
         //main program
         public class Program
@@ -174,7 +152,6 @@ namespace EventInterfaces
             {
                 IWedding wed = new Events(1, "Wedding", 3000.00);
                 wed.printEventData();
-                wed.enterWDate();
                 Console.WriteLine("Enter your discount code.");
                 char wedCode = Console.ReadLine()[0];
                 Console.Write("Your total is: $" + wed.eventCode(wedCode));
@@ -184,7 +161,6 @@ namespace EventInterfaces
 
                 IGraduation grad = new Events(2, "Graduation Party", 500.00);
                 grad.printEventData();
-                grad.enterGYear();
                 Console.WriteLine("Enter your discount code.");
                 char gradCode = Console.ReadLine()[0];
                 Console.Write("Your total is: $" + grad.eventCode(gradCode));
@@ -194,10 +170,18 @@ namespace EventInterfaces
 
                 IBirthday birth = new Events(3, "Birthday Party", 100.00);
                 birth.printEventData();
-                birth.bdayMsg();
                 Console.WriteLine("Enter your discount code.");
                 char bCode = Console.ReadLine()[0];
                 Console.Write("Your total is: $" + birth.eventCode(bCode));
+
+                //buffer
+                Console.WriteLine("\n-------------------------------");
+
+                IBirthday birth2 = new Events(3, "Birthday Celebration", 300.00);
+                birth2.printEventData();
+                Console.WriteLine("Enter your discount code.");
+                char b2Code = Console.ReadLine()[0];
+                Console.Write("Your total is: $" + birth2.eventCode(b2Code));
 
                 //buffer
                 Console.WriteLine("\n-------------------------------");

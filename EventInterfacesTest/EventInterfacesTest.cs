@@ -49,15 +49,58 @@ namespace EventInterfacesTest
             Assert.AreEqual(360, cost);
         }
 
+
         [TestMethod]
         public void eventCode_Other()
         {
             Events myEvent = new Events(5, "Test", 400.00);
-            double cost = myEvent.eventCode('k');
+            double cost = myEvent.eventCode('c');
 
             //nothing
             Assert.AreEqual(400, cost);
         }
+
+        [TestMethod]
+        public void eventCode_UpperE()
+        {
+            Events myEvent = new Events(5, "Test", 400.00);
+            double cost = myEvent.eventCode('E');
+
+            //nothing
+            Assert.AreEqual(300, cost);
+        }
+
+        [TestMethod]
+        public void eventCode_LowerE()
+        {
+            Events myEvent = new Events(5, "Test", 400.00);
+            double cost = myEvent.eventCode('e');
+
+            //nothing
+            Assert.AreEqual(300, cost);
+        }
+
+        [TestMethod]
+        public void eventCode_UpperF()
+        {
+            Events myEvent = new Events(5, "Test", 400.00);
+            double cost = myEvent.eventCode('F');
+
+            //nothing
+            Assert.AreEqual(0, cost);
+        }
+
+        [TestMethod]
+        public void eventCode_LowerF()
+        {
+            Events myEvent = new Events(5, "Test", 400.00);
+            double cost = myEvent.eventCode('f');
+
+            //nothing
+            Assert.AreEqual(0, cost);
+        }
+
+        
   
     }
 }
